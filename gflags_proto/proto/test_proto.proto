@@ -1,0 +1,9 @@
+syntax = "proto3";
+package tutorial;
+
+message Person {
+    string name = 1;                       
+    double pwd = 2;                 
+    int64 age = 3;               
+    bool enable_print = 4;         
+}
