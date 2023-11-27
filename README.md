@@ -1,7 +1,12 @@
-# 使用方法
-cd gflags_proto
-mkdir build 
-mkdir bin
-cd build && cmake .. && make
-cd bin
-./demo_gflags_proto --flagfile ../config/conf.flags
+执行流程
+1）创建文件夹
+mkdir build bin
+
+2）编译
+cd build
+cmake ..
+make
+
+3）执行
+cd ../bin
+./main --flagfile=../config/conf.flags

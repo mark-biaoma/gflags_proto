@@ -23,7 +23,7 @@ bool ReadConfigToProto(const std::string &file_name,
   bool result = false;
   if (str_endwith(file_name, ".json")) {
     result = ReadJsonFileToProto(file_name, proto);
-  } else if (str_endwith(file_name, ".txt")) {
+  } else if (str_endwith(file_name, ".prototxt")) {
     result = ReadFileToProto(file_name, proto);
   }
 

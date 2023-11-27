@@ -1,0 +1,13 @@
+person {
+    name: "zhangsan"                       
+    pwd: 12345678                
+    age: 10              
+    enable_print: true
+}
+
+person {
+    name: "mabiao"                       
+    pwd: 666666                
+    age: 5              
+    enable_print: true
+}

@@ -7,3 +7,7 @@ message Person {
     int64 age = 3;               
     bool enable_print = 4;         
 }
+
+message Persons{
+    repeated Person person = 1;
+}

@@ -1,5 +1,11 @@
 #include <iostream>
+#include <memory>
 #include "test_gflags.h"
+#include "proto_parse.h"
+#include "test_proto.pb.h"
+#include <deque>
+#include <string>
+#include <algorithm>
 using namespace std;
 
 void print_argv(int argc, char **argv)
@@ -22,7 +28,27 @@ int main(int argc, char **argv)
     /* 2、验证变量的访问 */
     for(int i=2; i>0;--i)
       std::cout<<"hello world gflags: "<<FLAGS_config_path<<std::endl;
+
+    std::shared_ptr<tutorial::Persons> proto_conf = std::make_shared<tutorial::Persons>();
+    if (ReadConfigToProto(FLAGS_config_path, proto_conf.get())){
+      printf("proto_config:[%s]", proto_conf->Utf8DebugString().c_str());
+    }
     
     gflags::ShutDownCommandLineFlags();
+
+    std::deque<int> que;
+    que.push_front(1);
+    que.push_back(3);
+    que.push_back(6);
+    que.push_back(2);
+    que.pop_front();
+    que.push_back(4);
+    
+    std::deque<int>::iterator
+    result = std::max_element(que.begin(), que.end());
+    std::cout << "max element at: " << que[std::distance(que.begin(), result)] << '\n';
+
+
+
     return 0;
 }
